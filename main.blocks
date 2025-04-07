@@ -1,0 +1,35 @@
+<xml xmlns="https://developers.google.com/blockly/xml"><variables><variable type="KIND_SpriteKind" id="INCJJMR.`yD}uUCFt.)m">Player</variable><variable type="KIND_SpriteKind" id="%0*OePEo~+[witUFb!O[">Projectile</variable><variable type="KIND_SpriteKind" id="Slu6fY$GECS}r/EGcZJF">Food</variable><variable type="KIND_SpriteKind" id="~N85hcPV6EgBxUq/1DR^">Enemy</variable></variables><block type="pxt-on-start" id="fn8aO!YpYx,AqQY5fEO," x="0" y="0"></block><block type="spritescreatenoset" id="Xmmo09~Zt(Xw7`dI$XFs" disabled-reasons="ORPHANED_BLOCK,MANUALLY_DISABLED" x="522" y="248"><value name="img"><shadow type="screen_image_picker" id="h)b|pg.DPP%s:cQ]|mx?" disabled-reasons="MANUALLY_DISABLED"><field name="img">img`
+. . . . . . . . . . . . . . . . 
+. . . . . . . f f . . . . . . . 
+. . . . . . f f f f . . . . . . 
+. . . . . . f . . f . . . . . . 
+. . . . . . f . . f . . . . . . 
+. . . . . . f . . f . . . . . . 
+. . . . . . f . . f . . . . . . 
+. . . . . . f . . f . . . . . . 
+. . . . . . f . . f . . . . . . 
+. . . . . . . . . f . . . . . . 
+. . . . . . . . . f . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`</field><data>{"commentRefs":[],"fieldData":{"img":null}}</data></shadow><block type="screen_image_picker" id="ki)j3=/[Ez7V!bO0!DeJ" disabled-reasons="ORPHANED_BLOCK,MANUALLY_DISABLED"><field name="img">img`
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . f f f f f . . . . . . 
+. . . . . f . . . f . . . . . . 
+. . . . . f . . . f . . . . . . 
+. . . . . f . . . f . . . . . . 
+. . . . . f . . . f . . . . . . 
+. . . . . f . . . f . . . . . . 
+. . . . . f . . . f . . . . . . 
+. . . . . f . . . f . . . . . . 
+. . . . . f . . . f . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`</field><data>{"commentRefs":[],"fieldData":{"img":null}}</data></block></value><value name="kind"><shadow type="spritekind" id="6E%A+Maw%~mEoJS]4KmU" disabled-reasons="MANUALLY_DISABLED"><field name="MEMBER">Player</field></shadow></value></block></xml>
