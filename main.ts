@@ -172,7 +172,7 @@ let UpArrow = sprites.create(img`
     . . . . . . f f f f f . . . . . . 
     . . . . . . . . . . . . . . . . . 
     `, SpriteKind.Projectile)
-UpArrow.setPosition(0, 0)
+UpArrow.setPosition(90, 30)
 let RightArrow = sprites.create(img`
     . . . . . . . . . . . . . . . . . 
     . . . . . . . . . . . . . . . . . 
@@ -192,7 +192,7 @@ let RightArrow = sprites.create(img`
     . . . . . . . . . . . . . . . . . 
     . . . . . . . . . . . . . . . . . 
     `, SpriteKind.Projectile)
-RightArrow.setPosition(0, 0)
+RightArrow.setPosition(110, 30)
 let DownArrow = sprites.create(img`
     . . . . . . . . . . . . . . . . . 
     . . . . . . f f f f f . . . . . . 
@@ -212,7 +212,7 @@ let DownArrow = sprites.create(img`
     . . . . . . f f f f f . . . . . . 
     . . . . . . . . . . . . . . . . . 
     `, SpriteKind.Projectile)
-DownArrow.setPosition(0, 0)
+DownArrow.setPosition(70, 30)
 let LeftArrow = sprites.create(img`
     . . . . . . . . . . . . . . . . . 
     . . . . . . . . . . . . . . . . . 
@@ -232,4 +232,4 @@ let LeftArrow = sprites.create(img`
     . . . . . . . . . . . . . . . . . 
     . . . . . . . . . . . . . . . . . 
     `, SpriteKind.Projectile)
-LeftArrow.setPosition(0, 0)
+LeftArrow.setPosition(50, 30)
