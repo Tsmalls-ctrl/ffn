@@ -1,66 +1,13 @@
+namespace SpriteKind {
+    export const Off = SpriteKind.create()
+    export const Miss = SpriteKind.create()
+    export const Perfect = SpriteKind.create()
+    export const Late = SpriteKind.create()
+    export const Early = SpriteKind.create()
+}
 controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
     animation.runImageAnimation(
-    UpArrow,
-    [img`
-        . . . . . . . . . . . . . . . . . 
-        . . . . . . f f f f f . . . . . . 
-        . . . . . f f 9 9 9 f f . . . . . 
-        . . . . f f 9 9 1 9 9 f f . . . . 
-        . . . f f 9 9 1 1 1 9 9 f f . . . 
-        . . f f 9 1 1 1 1 1 1 1 9 f f . . 
-        . . f 9 9 9 9 9 1 9 9 9 9 9 f . . 
-        . . f f f f f 9 1 9 f f f f f . . 
-        . . . . . . f 9 1 9 f . . . . . . 
-        . . . . . . f 9 1 9 f . . . . . . 
-        . . . . . . f 9 1 9 f . . . . . . 
-        . . . . . . f 9 1 9 f . . . . . . 
-        . . . . . . f 9 1 9 f . . . . . . 
-        . . . . . . f 9 1 9 f . . . . . . 
-        . . . . . . f 9 9 9 f . . . . . . 
-        . . . . . . f f f f f . . . . . . 
-        . . . . . . . . . . . . . . . . . 
-        `,img`
-        . . . . . . . . . . . . . . . . . 
-        . . . . . . f f f f f . . . . . . 
-        . . . . . f f 1 1 1 f f . . . . . 
-        . . . . f f 1 1 9 1 1 f f . . . . 
-        . . . f f 1 1 9 9 9 1 1 f f . . . 
-        . . f f 1 9 9 9 9 9 9 9 1 f f . . 
-        . . f 1 1 1 1 1 9 1 1 1 1 1 f . . 
-        . . f f f f f 1 9 1 f f f f f . . 
-        . . . . . . f 1 9 1 f . . . . . . 
-        . . . . . . f 1 9 1 f . . . . . . 
-        . . . . . . f 1 9 1 f . . . . . . 
-        . . . . . . f 1 9 1 f . . . . . . 
-        . . . . . . f 1 9 1 f . . . . . . 
-        . . . . . . f 1 9 1 f . . . . . . 
-        . . . . . . f 1 1 1 f . . . . . . 
-        . . . . . . f f f f f . . . . . . 
-        . . . . . . . . . . . . . . . . . 
-        `,img`
-        . . . . . . . . . . . . . . . . . 
-        . . . . . . f f f f f . . . . . . 
-        . . . . . f f 9 9 9 f f . . . . . 
-        . . . . f f 9 9 1 9 9 f f . . . . 
-        . . . f f 9 9 1 1 1 9 9 f f . . . 
-        . . f f 9 1 1 1 1 1 1 1 9 f f . . 
-        . . f 9 9 9 9 9 1 9 9 9 9 9 f . . 
-        . . f f f f f 9 1 9 f f f f f . . 
-        . . . . . . f 9 1 9 f . . . . . . 
-        . . . . . . f 9 1 9 f . . . . . . 
-        . . . . . . f 9 1 9 f . . . . . . 
-        . . . . . . f 9 1 9 f . . . . . . 
-        . . . . . . f 9 1 9 f . . . . . . 
-        . . . . . . f 9 1 9 f . . . . . . 
-        . . . . . . f 9 9 9 f . . . . . . 
-        . . . . . . f f f f f . . . . . . 
-        . . . . . . . . . . . . . . . . . 
-        `],
-    100,
-    false
-    )
-    animation.runImageAnimation(
-    mySprite,
+    BetaChar,
     [img`
         .......b555b..................
         .......b555b..................
@@ -189,70 +136,57 @@ controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
     100,
     false
     )
+    UpArrow.setImage(img`
+        . . . . . . . . . . . . . . . . . 
+        . . . . . . 8 8 8 8 8 . . . . . . 
+        . . . . . 8 8 . . . 8 8 . . . . . 
+        . . . . 8 8 . . . . . 8 8 . . . . 
+        . . . 8 8 . . . . . . . 8 8 . . . 
+        . . 8 8 . . . . . . . . . 8 8 . . 
+        . . 8 . . . . . . . . . . . 8 . . 
+        . . 8 8 8 8 8 . . . 8 8 8 8 8 . . 
+        . . . . . . 8 . . . 8 . . . . . . 
+        . . . . . . 8 . . . 8 . . . . . . 
+        . . . . . . 8 . . . 8 . . . . . . 
+        . . . . . . 8 . . . 8 . . . . . . 
+        . . . . . . 8 . . . 8 . . . . . . 
+        . . . . . . 8 . . . 8 . . . . . . 
+        . . . . . . 8 . . . 8 . . . . . . 
+        . . . . . . 8 8 8 8 8 . . . . . . 
+        . . . . . . . . . . . . . . . . . 
+        `)
+    UpArrow.setKind(SpriteKind.Perfect)
+    LateUp.setKind(SpriteKind.Late)
+    EarlyUp.setKind(SpriteKind.Early)
+    pause(100)
+    UpArrow.setKind(SpriteKind.Off)
+    EarlyUp.setKind(SpriteKind.Off)
+    LateUp.setKind(SpriteKind.Off)
+})
+controller.down.onEvent(ControllerButtonEvent.Released, function () {
+    DownArrow.setImage(img`
+        . . . . . . . . . . . . . . . . . 
+        . . . . . . 1 1 1 1 1 . . . . . . 
+        . . . . . . 1 . . . 1 . . . . . . 
+        . . . . . . 1 . . . 1 . . . . . . 
+        . . . . . . 1 . . . 1 . . . . . . 
+        . . . . . . 1 . . . 1 . . . . . . 
+        . . . . . . 1 . . . 1 . . . . . . 
+        . . . . . . 1 . . . 1 . . . . . . 
+        . . . . . . 1 . . . 1 . . . . . . 
+        . . 1 1 1 1 1 . . . 1 1 1 1 1 . . 
+        . . 1 . . . . . . . . . . . 1 . . 
+        . . 1 1 . . . . . . . . . 1 1 . . 
+        . . . 1 1 . . . . . . . 1 1 . . . 
+        . . . . 1 1 . . . . . 1 1 . . . . 
+        . . . . . 1 1 . . . 1 1 . . . . . 
+        . . . . . . 1 1 1 1 1 . . . . . . 
+        . . . . . . . . . . . . . . . . . 
+        `)
 })
 controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
     animation.runImageAnimation(
-    LeftArrow,
-    [img`
-        . . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . . 
-        . . . . . f f f . . . . . . . . . 
-        . . . . f f 5 f . . . . . . . . . 
-        . . . f f 5 5 f . . . . . . . . . 
-        . . f f 5 1 5 f . . . . . . . . . 
-        . f f 5 5 1 5 f f f f f f f f f . 
-        . f 5 5 1 1 5 5 5 5 5 5 5 5 5 f . 
-        . f 5 1 1 1 1 1 1 1 1 1 1 1 5 f . 
-        . f 5 5 1 1 5 5 5 5 5 5 5 5 5 f . 
-        . f f 5 5 1 5 f f f f f f f f f . 
-        . . f f 5 1 5 f . . . . . . . . . 
-        . . . f f 5 5 f . . . . . . . . . 
-        . . . . f f 5 f . . . . . . . . . 
-        . . . . . f f f . . . . . . . . . 
-        . . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . . 
-        `,img`
-        . . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . . 
-        . . . . . f f f . . . . . . . . . 
-        . . . . f f 1 f . . . . . . . . . 
-        . . . f f 1 1 f . . . . . . . . . 
-        . . f f 1 5 1 f . . . . . . . . . 
-        . f f 1 1 5 1 f f f f f f f f f . 
-        . f 1 1 5 5 1 1 1 1 1 1 1 1 1 f . 
-        . f 1 5 5 5 5 5 5 5 5 5 5 5 1 f . 
-        . f 1 1 5 5 1 1 1 1 1 1 1 1 1 f . 
-        . f f 1 1 5 1 f f f f f f f f f . 
-        . . f f 1 5 1 f . . . . . . . . . 
-        . . . f f 1 1 f . . . . . . . . . 
-        . . . . f f 1 f . . . . . . . . . 
-        . . . . . f f f . . . . . . . . . 
-        . . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . . 
-        `,img`
-        . . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . . 
-        . . . . . f f f . . . . . . . . . 
-        . . . . f f 5 f . . . . . . . . . 
-        . . . f f 5 5 f . . . . . . . . . 
-        . . f f 5 1 5 f . . . . . . . . . 
-        . f f 5 5 1 5 f f f f f f f f f . 
-        . f 5 5 1 1 5 5 5 5 5 5 5 5 5 f . 
-        . f 5 1 1 1 1 1 1 1 1 1 1 1 5 f . 
-        . f 5 5 1 1 5 5 5 5 5 5 5 5 5 f . 
-        . f f 5 5 1 5 f f f f f f f f f . 
-        . . f f 5 1 5 f . . . . . . . . . 
-        . . . f f 5 5 f . . . . . . . . . 
-        . . . . f f 5 f . . . . . . . . . 
-        . . . . . f f f . . . . . . . . . 
-        . . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . . 
-        `],
-    100,
-    false
-    )
-    animation.runImageAnimation(
-    mySprite,
+    BetaChar,
     [img`
         .......b555b..................
         .......b555b..................
@@ -381,70 +315,78 @@ controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
     100,
     false
     )
+    LeftArrow.setImage(img`
+        . . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . . 
+        . . . . . a a a . . . . . . . . . 
+        . . . . a a . a . . . . . . . . . 
+        . . . a a . . a . . . . . . . . . 
+        . . a a . . . a . . . . . . . . . 
+        . a a . . . . a a a a a a a a a . 
+        . a . . . . . . . . . . . . . a . 
+        . a . . . . . . . . . . . . . a . 
+        . a . . . . . . . . . . . . . a . 
+        . a a . . . . a a a a a a a a a . 
+        . . a a . . . a . . . . . . . . . 
+        . . . a a . . a . . . . . . . . . 
+        . . . . a a . a . . . . . . . . . 
+        . . . . . a a a . . . . . . . . . 
+        . . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . . 
+        `)
+    LeftArrow.setKind(SpriteKind.Perfect)
+    EarlyLeft.setKind(SpriteKind.Early)
+    LateLeft.setKind(SpriteKind.Late)
+    pause(100)
+    LeftArrow.setKind(SpriteKind.Off)
+    EarlyLeft.setKind(SpriteKind.Off)
+    LateLeft.setKind(SpriteKind.Off)
+})
+controller.right.onEvent(ControllerButtonEvent.Released, function () {
+    RightArrow.setImage(img`
+        . . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . . 
+        . . . . . . . . . 1 1 1 . . . . . 
+        . . . . . . . . . 1 . 1 1 . . . . 
+        . . . . . . . . . 1 . . 1 1 . . . 
+        . . . . . . . . . 1 . . . 1 1 . . 
+        . 1 1 1 1 1 1 1 1 1 . . . . 1 1 . 
+        . 1 . . . . . . . . . . . . . 1 . 
+        . 1 . . . . . . . . . . . . . 1 . 
+        . 1 . . . . . . . . . . . . . 1 . 
+        . 1 1 1 1 1 1 1 1 1 . . . . 1 1 . 
+        . . . . . . . . . 1 . . . 1 1 . . 
+        . . . . . . . . . 1 . . 1 1 . . . 
+        . . . . . . . . . 1 . 1 1 . . . . 
+        . . . . . . . . . 1 1 1 . . . . . 
+        . . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . . 
+        `)
+})
+controller.left.onEvent(ControllerButtonEvent.Released, function () {
+    LeftArrow.setImage(img`
+        . . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . . 
+        . . . . . 1 1 1 . . . . . . . . . 
+        . . . . 1 1 . 1 . . . . . . . . . 
+        . . . 1 1 . . 1 . . . . . . . . . 
+        . . 1 1 . . . 1 . . . . . . . . . 
+        . 1 1 . . . . 1 1 1 1 1 1 1 1 1 . 
+        . 1 . . . . . . . . . . . . . 1 . 
+        . 1 . . . . . . . . . . . . . 1 . 
+        . 1 . . . . . . . . . . . . . 1 . 
+        . 1 1 . . . . 1 1 1 1 1 1 1 1 1 . 
+        . . 1 1 . . . 1 . . . . . . . . . 
+        . . . 1 1 . . 1 . . . . . . . . . 
+        . . . . 1 1 . 1 . . . . . . . . . 
+        . . . . . 1 1 1 . . . . . . . . . 
+        . . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . . 
+        `)
 })
 controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
     animation.runImageAnimation(
-    RightArrow,
-    [img`
-        . . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . . 
-        . . . . . . . . . f f f . . . . . 
-        . . . . . . . . . f 7 f f . . . . 
-        . . . . . . . . . f 7 7 f f . . . 
-        . . . . . . . . . f 7 1 7 f f . . 
-        . f f f f f f f f f 7 1 7 7 f f . 
-        . f 7 7 7 7 7 7 7 7 7 1 1 7 7 f . 
-        . f 7 1 1 1 1 1 1 1 1 1 1 1 7 f . 
-        . f 7 7 7 7 7 7 7 7 7 1 1 7 7 f . 
-        . f f f f f f f f f 7 1 7 7 f f . 
-        . . . . . . . . . f 7 1 7 f f . . 
-        . . . . . . . . . f 7 7 f f . . . 
-        . . . . . . . . . f 7 f f . . . . 
-        . . . . . . . . . f f f . . . . . 
-        . . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . . 
-        `,img`
-        . . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . . 
-        . . . . . . . . . f f f . . . . . 
-        . . . . . . . . . f 1 f f . . . . 
-        . . . . . . . . . f 1 1 f f . . . 
-        . . . . . . . . . f 1 7 1 f f . . 
-        . f f f f f f f f f 1 7 1 1 f f . 
-        . f 1 1 1 1 1 1 1 1 1 7 7 1 1 f . 
-        . f 1 7 7 7 7 7 7 7 7 7 7 7 1 f . 
-        . f 1 1 1 1 1 1 1 1 1 7 7 1 1 f . 
-        . f f f f f f f f f 1 7 1 1 f f . 
-        . . . . . . . . . f 1 7 1 f f . . 
-        . . . . . . . . . f 1 1 f f . . . 
-        . . . . . . . . . f 1 f f . . . . 
-        . . . . . . . . . f f f . . . . . 
-        . . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . . 
-        `,img`
-        . . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . . 
-        . . . . . . . . . f f f . . . . . 
-        . . . . . . . . . f 7 f f . . . . 
-        . . . . . . . . . f 7 7 f f . . . 
-        . . . . . . . . . f 7 1 7 f f . . 
-        . f f f f f f f f f 7 1 7 7 f f . 
-        . f 7 7 7 7 7 7 7 7 7 1 1 7 7 f . 
-        . f 7 1 1 1 1 1 1 1 1 1 1 1 7 f . 
-        . f 7 7 7 7 7 7 7 7 7 1 1 7 7 f . 
-        . f f f f f f f f f 7 1 7 7 f f . 
-        . . . . . . . . . f 7 1 7 f f . . 
-        . . . . . . . . . f 7 7 f f . . . 
-        . . . . . . . . . f 7 f f . . . . 
-        . . . . . . . . . f f f . . . . . 
-        . . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . . 
-        `],
-    100,
-    false
-    )
-    animation.runImageAnimation(
-    mySprite,
+    BetaChar,
     [img`
         ..................b555b.......
         ..................b555b.......
@@ -573,70 +515,57 @@ controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
     100,
     false
     )
+    RightArrow.setImage(img`
+        . . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . . 
+        . . . . . . . . . 7 7 7 . . . . . 
+        . . . . . . . . . 7 . 7 7 . . . . 
+        . . . . . . . . . 7 . . 7 7 . . . 
+        . . . . . . . . . 7 . . . 7 7 . . 
+        . 7 7 7 7 7 7 7 7 7 . . . . 7 7 . 
+        . 7 . . . . . . . . . . . . . 7 . 
+        . 7 . . . . . . . . . . . . . 7 . 
+        . 7 . . . . . . . . . . . . . 7 . 
+        . 7 7 7 7 7 7 7 7 7 . . . . 7 7 . 
+        . . . . . . . . . 7 . . . 7 7 . . 
+        . . . . . . . . . 7 . . 7 7 . . . 
+        . . . . . . . . . 7 . 7 7 . . . . 
+        . . . . . . . . . 7 7 7 . . . . . 
+        . . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . . 
+        `)
+    RightArrow.setKind(SpriteKind.Perfect)
+    EarlyRight.setKind(SpriteKind.Early)
+    LateRight.setKind(SpriteKind.Late)
+    pause(100)
+    RightArrow.setKind(SpriteKind.Off)
+    EarlyRight.setKind(SpriteKind.Off)
+    LateRight.setKind(SpriteKind.Off)
+})
+controller.up.onEvent(ControllerButtonEvent.Released, function () {
+    UpArrow.setImage(img`
+        . . . . . . . . . . . . . . . . . 
+        . . . . . . 1 1 1 1 1 . . . . . . 
+        . . . . . 1 1 . . . 1 1 . . . . . 
+        . . . . 1 1 . . . . . 1 1 . . . . 
+        . . . 1 1 . . . . . . . 1 1 . . . 
+        . . 1 1 . . . . . . . . . 1 1 . . 
+        . . 1 . . . . . . . . . . . 1 . . 
+        . . 1 1 1 1 1 . . . 1 1 1 1 1 . . 
+        . . . . . . 1 . . . 1 . . . . . . 
+        . . . . . . 1 . . . 1 . . . . . . 
+        . . . . . . 1 . . . 1 . . . . . . 
+        . . . . . . 1 . . . 1 . . . . . . 
+        . . . . . . 1 . . . 1 . . . . . . 
+        . . . . . . 1 . . . 1 . . . . . . 
+        . . . . . . 1 . . . 1 . . . . . . 
+        . . . . . . 1 1 1 1 1 . . . . . . 
+        . . . . . . . . . . . . . . . . . 
+        `)
 })
 controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
     animation.runImageAnimation(
-    DownArrow,
-    [img`
-        . . . . . . . . . . . . . . . . . 
-        . . . . . . f f f f f . . . . . . 
-        . . . . . . f 2 2 2 f . . . . . . 
-        . . . . . . f 2 1 2 f . . . . . . 
-        . . . . . . f 2 1 2 f . . . . . . 
-        . . . . . . f 2 1 2 f . . . . . . 
-        . . . . . . f 2 1 2 f . . . . . . 
-        . . . . . . f 2 1 2 f . . . . . . 
-        . . . . . . f 2 1 2 f . . . . . . 
-        . . f f f f f 2 1 2 f f f f f . . 
-        . . f 2 2 2 2 2 1 2 2 2 2 2 f . . 
-        . . f f 2 1 1 1 1 1 1 1 2 f f . . 
-        . . . f f 2 2 1 1 1 2 2 f f . . . 
-        . . . . f f 2 2 1 2 2 f f . . . . 
-        . . . . . f f 2 2 2 f f . . . . . 
-        . . . . . . f f f f f . . . . . . 
-        . . . . . . . . . . . . . . . . . 
-        `,img`
-        . . . . . . . . . . . . . . . . . 
-        . . . . . . f f f f f . . . . . . 
-        . . . . . . f 1 1 1 f . . . . . . 
-        . . . . . . f 1 2 1 f . . . . . . 
-        . . . . . . f 1 2 1 f . . . . . . 
-        . . . . . . f 1 2 1 f . . . . . . 
-        . . . . . . f 1 2 1 f . . . . . . 
-        . . . . . . f 1 2 1 f . . . . . . 
-        . . . . . . f 1 2 1 f . . . . . . 
-        . . f f f f f 1 2 1 f f f f f . . 
-        . . f 1 1 1 1 1 2 1 1 1 1 1 f . . 
-        . . f f 1 2 2 2 2 2 2 2 1 f f . . 
-        . . . f f 1 1 2 2 2 1 1 f f . . . 
-        . . . . f f 1 1 2 1 1 f f . . . . 
-        . . . . . f f 1 1 1 f f . . . . . 
-        . . . . . . f f f f f . . . . . . 
-        . . . . . . . . . . . . . . . . . 
-        `,img`
-        . . . . . . . . . . . . . . . . . 
-        . . . . . . f f f f f . . . . . . 
-        . . . . . . f 2 2 2 f . . . . . . 
-        . . . . . . f 2 1 2 f . . . . . . 
-        . . . . . . f 2 1 2 f . . . . . . 
-        . . . . . . f 2 1 2 f . . . . . . 
-        . . . . . . f 2 1 2 f . . . . . . 
-        . . . . . . f 2 1 2 f . . . . . . 
-        . . . . . . f 2 1 2 f . . . . . . 
-        . . f f f f f 2 1 2 f f f f f . . 
-        . . f 2 2 2 2 2 1 2 2 2 2 2 f . . 
-        . . f f 2 1 1 1 1 1 1 1 2 f f . . 
-        . . . f f 2 2 1 1 1 2 2 f f . . . 
-        . . . . f f 2 2 1 2 2 f f . . . . 
-        . . . . . f f 2 2 2 f f . . . . . 
-        . . . . . . f f f f f . . . . . . 
-        . . . . . . . . . . . . . . . . . 
-        `],
-    100,
-    false
-    )
-    animation.runImageAnimation(
-    mySprite,
+    BetaChar,
     [img`
         .......b555b..................
         .......b555b..................
@@ -765,12 +694,47 @@ controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
     100,
     false
     )
+    DownArrow.setImage(img`
+        . . . . . . . . . . . . . . . . . 
+        . . . . . . 2 2 2 2 2 . . . . . . 
+        . . . . . . 2 . . . 2 . . . . . . 
+        . . . . . . 2 . . . 2 . . . . . . 
+        . . . . . . 2 . . . 2 . . . . . . 
+        . . . . . . 2 . . . 2 . . . . . . 
+        . . . . . . 2 . . . 2 . . . . . . 
+        . . . . . . 2 . . . 2 . . . . . . 
+        . . . . . . 2 . . . 2 . . . . . . 
+        . . 2 2 2 2 2 . . . 2 2 2 2 2 . . 
+        . . 2 . . . . . . . . . . . 2 . . 
+        . . 2 2 . . . . . . . . . 2 2 . . 
+        . . . 2 2 . . . . . . . 2 2 . . . 
+        . . . . 2 2 . . . . . 2 2 . . . . 
+        . . . . . 2 2 . . . 2 2 . . . . . 
+        . . . . . . 2 2 2 2 2 . . . . . . 
+        . . . . . . . . . . . . . . . . . 
+        `)
+    DownArrow.setKind(SpriteKind.Perfect)
+    LateDown.setKind(SpriteKind.Late)
+    EarlyDown.setKind(SpriteKind.Early)
+    pause(100)
+    DownArrow.setKind(SpriteKind.Off)
+    LateDown.setKind(SpriteKind.Off)
+    EarlyDown.setKind(SpriteKind.Off)
 })
-let LeftArrow: Sprite = null
+let UpProjectile: Sprite = null
+let BetaChar: Sprite = null
+let LateDown: Sprite = null
+let EarlyDown: Sprite = null
 let DownArrow: Sprite = null
+let LateRight: Sprite = null
+let EarlyRight: Sprite = null
 let RightArrow: Sprite = null
+let LateUp: Sprite = null
+let EarlyUp: Sprite = null
 let UpArrow: Sprite = null
-let mySprite: Sprite = null
+let LateLeft: Sprite = null
+let EarlyLeft: Sprite = null
+let LeftArrow: Sprite = null
 scene.setBackgroundImage(img`
     eeeee2222222222222222222222222222222222ee2222ee2222ee2222222eeeee2222222222222222222222222222222222ee22222eeee222ee2eeeee2222222222222222222222222222222222ee222
     222eeeee22222222222222222222222222222eee2222eeee2222ee222222222eeeee22222222222222222222222222222eee2222eeeee222ee22222eeeee22222222222222222222222222222eee2222
@@ -893,7 +857,235 @@ scene.setBackgroundImage(img`
     222222e2ebbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbe2e222222
     222222eeebbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbeee222222
     `)
-mySprite = sprites.create(img`
+LeftArrow = sprites.create(img`
+    . . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . . 
+    . . . . . 1 1 1 . . . . . . . . . 
+    . . . . 1 1 . 1 . . . . . . . . . 
+    . . . 1 1 . . 1 . . . . . . . . . 
+    . . 1 1 . . . 1 . . . . . . . . . 
+    . 1 1 . . . . 1 1 1 1 1 1 1 1 1 . 
+    . 1 . . . . . . . . . . . . . 1 . 
+    . 1 . . . . . . . . . . . . . 1 . 
+    . 1 . . . . . . . . . . . . . 1 . 
+    . 1 1 . . . . 1 1 1 1 1 1 1 1 1 . 
+    . . 1 1 . . . 1 . . . . . . . . . 
+    . . . 1 1 . . 1 . . . . . . . . . 
+    . . . . 1 1 . 1 . . . . . . . . . 
+    . . . . . 1 1 1 . . . . . . . . . 
+    . . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . . 
+    `, SpriteKind.Off)
+EarlyLeft = sprites.create(img`
+    . . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . . 
+    f f f f f f f f f f f f f f f f f 
+    f f f f f f f f f f f f f f f f f 
+    f f f f f f f f f f f f f f f f f 
+    f f f f f f f f f f f f f f f f f 
+    f f f f f f f f f f f f f f f f f 
+    f f f f f f f f f f f f f f f f f 
+    f f f f f f f f f f f f f f f f f 
+    f f f f f f f f f f f f f f f f f 
+    f f f f f f f f f f f f f f f f f 
+    . . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . . 
+    `, SpriteKind.Off)
+LateLeft = sprites.create(img`
+    . . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . . 
+    f f f f f f f f f f f f f f f f f 
+    f f f f f f f f f f f f f f f f f 
+    f f f f f f f f f f f f f f f f f 
+    f f f f f f f f f f f f f f f f f 
+    f f f f f f f f f f f f f f f f f 
+    f f f f f f f f f f f f f f f f f 
+    f f f f f f f f f f f f f f f f f 
+    f f f f f f f f f f f f f f f f f 
+    f f f f f f f f f f f f f f f f f 
+    . . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . . 
+    `, SpriteKind.Off)
+UpArrow = sprites.create(img`
+    . . . . . . . . . . . . . . . . . 
+    . . . . . . 1 1 1 1 1 . . . . . . 
+    . . . . . 1 1 . . . 1 1 . . . . . 
+    . . . . 1 1 . . . . . 1 1 . . . . 
+    . . . 1 1 . . . . . . . 1 1 . . . 
+    . . 1 1 . . . . . . . . . 1 1 . . 
+    . . 1 . . . . . . . . . . . 1 . . 
+    . . 1 1 1 1 1 . . . 1 1 1 1 1 . . 
+    . . . . . . 1 . . . 1 . . . . . . 
+    . . . . . . 1 . . . 1 . . . . . . 
+    . . . . . . 1 . . . 1 . . . . . . 
+    . . . . . . 1 . . . 1 . . . . . . 
+    . . . . . . 1 . . . 1 . . . . . . 
+    . . . . . . 1 . . . 1 . . . . . . 
+    . . . . . . 1 . . . 1 . . . . . . 
+    . . . . . . 1 1 1 1 1 . . . . . . 
+    . . . . . . . . . . . . . . . . . 
+    `, SpriteKind.Off)
+EarlyUp = sprites.create(img`
+    . . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . . 
+    f f f f f f f f f f f f f f f f f 
+    f f f f f f f f f f f f f f f f f 
+    f f f f f f f f f f f f f f f f f 
+    f f f f f f f f f f f f f f f f f 
+    f f f f f f f f f f f f f f f f f 
+    f f f f f f f f f f f f f f f f f 
+    f f f f f f f f f f f f f f f f f 
+    f f f f f f f f f f f f f f f f f 
+    f f f f f f f f f f f f f f f f f 
+    . . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . . 
+    `, SpriteKind.Off)
+LateUp = sprites.create(img`
+    . . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . . 
+    f f f f f f f f f f f f f f f f f 
+    f f f f f f f f f f f f f f f f f 
+    f f f f f f f f f f f f f f f f f 
+    f f f f f f f f f f f f f f f f f 
+    f f f f f f f f f f f f f f f f f 
+    f f f f f f f f f f f f f f f f f 
+    f f f f f f f f f f f f f f f f f 
+    f f f f f f f f f f f f f f f f f 
+    f f f f f f f f f f f f f f f f f 
+    . . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . . 
+    `, SpriteKind.Off)
+RightArrow = sprites.create(img`
+    . . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . . 
+    . . . . . . . . . 1 1 1 . . . . . 
+    . . . . . . . . . 1 . 1 1 . . . . 
+    . . . . . . . . . 1 . . 1 1 . . . 
+    . . . . . . . . . 1 . . . 1 1 . . 
+    . 1 1 1 1 1 1 1 1 1 . . . . 1 1 . 
+    . 1 . . . . . . . . . . . . . 1 . 
+    . 1 . . . . . . . . . . . . . 1 . 
+    . 1 . . . . . . . . . . . . . 1 . 
+    . 1 1 1 1 1 1 1 1 1 . . . . 1 1 . 
+    . . . . . . . . . 1 . . . 1 1 . . 
+    . . . . . . . . . 1 . . 1 1 . . . 
+    . . . . . . . . . 1 . 1 1 . . . . 
+    . . . . . . . . . 1 1 1 . . . . . 
+    . . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . . 
+    `, SpriteKind.Off)
+EarlyRight = sprites.create(img`
+    . . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . . 
+    f f f f f f f f f f f f f f f f f 
+    f f f f f f f f f f f f f f f f f 
+    f f f f f f f f f f f f f f f f f 
+    f f f f f f f f f f f f f f f f f 
+    f f f f f f f f f f f f f f f f f 
+    f f f f f f f f f f f f f f f f f 
+    f f f f f f f f f f f f f f f f f 
+    f f f f f f f f f f f f f f f f f 
+    f f f f f f f f f f f f f f f f f 
+    . . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . . 
+    `, SpriteKind.Off)
+LateRight = sprites.create(img`
+    . . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . . 
+    f f f f f f f f f f f f f f f f f 
+    f f f f f f f f f f f f f f f f f 
+    f f f f f f f f f f f f f f f f f 
+    f f f f f f f f f f f f f f f f f 
+    f f f f f f f f f f f f f f f f f 
+    f f f f f f f f f f f f f f f f f 
+    f f f f f f f f f f f f f f f f f 
+    f f f f f f f f f f f f f f f f f 
+    f f f f f f f f f f f f f f f f f 
+    . . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . . 
+    `, SpriteKind.Off)
+DownArrow = sprites.create(img`
+    . . . . . . . . . . . . . . . . . 
+    . . . . . . 1 1 1 1 1 . . . . . . 
+    . . . . . . 1 . . . 1 . . . . . . 
+    . . . . . . 1 . . . 1 . . . . . . 
+    . . . . . . 1 . . . 1 . . . . . . 
+    . . . . . . 1 . . . 1 . . . . . . 
+    . . . . . . 1 . . . 1 . . . . . . 
+    . . . . . . 1 . . . 1 . . . . . . 
+    . . . . . . 1 . . . 1 . . . . . . 
+    . . 1 1 1 1 1 . . . 1 1 1 1 1 . . 
+    . . 1 . . . . . . . . . . . 1 . . 
+    . . 1 1 . . . . . . . . . 1 1 . . 
+    . . . 1 1 . . . . . . . 1 1 . . . 
+    . . . . 1 1 . . . . . 1 1 . . . . 
+    . . . . . 1 1 . . . 1 1 . . . . . 
+    . . . . . . 1 1 1 1 1 . . . . . . 
+    . . . . . . . . . . . . . . . . . 
+    `, SpriteKind.Off)
+EarlyDown = sprites.create(img`
+    . . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . . 
+    f f f f f f f f f f f f f f f f f 
+    f f f f f f f f f f f f f f f f f 
+    f f f f f f f f f f f f f f f f f 
+    f f f f f f f f f f f f f f f f f 
+    f f f f f f f f f f f f f f f f f 
+    f f f f f f f f f f f f f f f f f 
+    f f f f f f f f f f f f f f f f f 
+    f f f f f f f f f f f f f f f f f 
+    f f f f f f f f f f f f f f f f f 
+    . . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . . 
+    `, SpriteKind.Off)
+LateDown = sprites.create(img`
+    . . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . . 
+    f f f f f f f f f f f f f f f f f 
+    f f f f f f f f f f f f f f f f f 
+    f f f f f f f f f f f f f f f f f 
+    f f f f f f f f f f f f f f f f f 
+    f f f f f f f f f f f f f f f f f 
+    f f f f f f f f f f f f f f f f f 
+    f f f f f f f f f f f f f f f f f 
+    f f f f f f f f f f f f f f f f f 
+    f f f f f f f f f f f f f f f f f 
+    . . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . . 
+    `, SpriteKind.Off)
+BetaChar = sprites.create(img`
     .......b555b..................
     .......b555b..................
     .......b555b..................
@@ -924,85 +1116,68 @@ mySprite = sprites.create(img`
     ....bbbb555555ddddddddddbcc...
     .......bbbbcccccccccccccc.....
     .......bbbbcccccccccccccc.....
-    `, SpriteKind.Player)
-mySprite.setPosition(124, 91)
-UpArrow = sprites.create(img`
-    . . . . . . . . . . . . . . . . . 
-    . . . . . . f f f f f . . . . . . 
-    . . . . . f f 9 9 9 f f . . . . . 
-    . . . . f f 9 9 1 9 9 f f . . . . 
-    . . . f f 9 9 1 1 1 9 9 f f . . . 
-    . . f f 9 1 1 1 1 1 1 1 9 f f . . 
-    . . f 9 9 9 9 9 1 9 9 9 9 9 f . . 
-    . . f f f f f 9 1 9 f f f f f . . 
-    . . . . . . f 9 1 9 f . . . . . . 
-    . . . . . . f 9 1 9 f . . . . . . 
-    . . . . . . f 9 1 9 f . . . . . . 
-    . . . . . . f 9 1 9 f . . . . . . 
-    . . . . . . f 9 1 9 f . . . . . . 
-    . . . . . . f 9 1 9 f . . . . . . 
-    . . . . . . f 9 9 9 f . . . . . . 
-    . . . . . . f f f f f . . . . . . 
-    . . . . . . . . . . . . . . . . . 
-    `, SpriteKind.Projectile)
+    `, SpriteKind.Off)
+let Lane: number = sprites.create(img`
+    22222222222222222222222222222222222222222222222222222222222222222222222222222222
+    22222222222222222222222222222222222222222222222222222222222222222222222222222222
+    22222222222222222222222222222222222222222222222222222222222222222222222222222222
+    22222222222222222222222222222222222222222222222222222222222222222222222222222222
+    22222222222222222222222222222222222222222222222222222222222222222222222222222222
+    22222222222222222222222222222222222222222222222222222222222222222222222222222222
+    22222222222222222222222222222222222222222222222222222222222222222222222222222222
+    22222222222222222222222222222222222222222222222222222222222222222222222222222222
+    22222222222222222222222222222222222222222222222222222222222222222222222222222222
+    `, SpriteKind.Miss)
+BetaChar.setPosition(124, 91)
 UpArrow.setPosition(90, 30)
-RightArrow = sprites.create(img`
-    . . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . . 
-    . . . . . . . . . f f f . . . . . 
-    . . . . . . . . . f 7 f f . . . . 
-    . . . . . . . . . f 7 7 f f . . . 
-    . . . . . . . . . f 7 1 7 f f . . 
-    . f f f f f f f f f 7 1 7 7 f f . 
-    . f 7 7 7 7 7 7 7 7 7 1 1 7 7 f . 
-    . f 7 1 1 1 1 1 1 1 1 1 1 1 7 f . 
-    . f 7 7 7 7 7 7 7 7 7 1 1 7 7 f . 
-    . f f f f f f f f f 7 1 7 7 f f . 
-    . . . . . . . . . f 7 1 7 f f . . 
-    . . . . . . . . . f 7 7 f f . . . 
-    . . . . . . . . . f 7 f f . . . . 
-    . . . . . . . . . f f f . . . . . 
-    . . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . . 
-    `, SpriteKind.Projectile)
+EarlyUp.setPosition(90, 42)
+LateUp.setPosition(90, 16)
 RightArrow.setPosition(110, 30)
-DownArrow = sprites.create(img`
-    . . . . . . . . . . . . . . . . . 
-    . . . . . . f f f f f . . . . . . 
-    . . . . . . f 2 2 2 f . . . . . . 
-    . . . . . . f 2 1 2 f . . . . . . 
-    . . . . . . f 2 1 2 f . . . . . . 
-    . . . . . . f 2 1 2 f . . . . . . 
-    . . . . . . f 2 1 2 f . . . . . . 
-    . . . . . . f 2 1 2 f . . . . . . 
-    . . . . . . f 2 1 2 f . . . . . . 
-    . . f f f f f 2 1 2 f f f f f . . 
-    . . f 2 2 2 2 2 1 2 2 2 2 2 f . . 
-    . . f f 2 1 1 1 1 1 1 1 2 f f . . 
-    . . . f f 2 2 1 1 1 2 2 f f . . . 
-    . . . . f f 2 2 1 2 2 f f . . . . 
-    . . . . . f f 2 2 2 f f . . . . . 
-    . . . . . . f f f f f . . . . . . 
-    . . . . . . . . . . . . . . . . . 
-    `, SpriteKind.Projectile)
+EarlyRight.setPosition(110, 42)
+LateRight.setPosition(110, 16)
 DownArrow.setPosition(70, 30)
-LeftArrow = sprites.create(img`
-    . . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . . 
-    . . . . . f f f . . . . . . . . . 
-    . . . . f f 5 f . . . . . . . . . 
-    . . . f f 5 5 f . . . . . . . . . 
-    . . f f 5 1 5 f . . . . . . . . . 
-    . f f 5 5 1 5 f f f f f f f f f . 
-    . f 5 5 1 1 5 5 5 5 5 5 5 5 5 f . 
-    . f 5 1 1 1 1 1 1 1 1 1 1 1 5 f . 
-    . f 5 5 1 1 5 5 5 5 5 5 5 5 5 f . 
-    . f f 5 5 1 5 f f f f f f f f f . 
-    . . f f 5 1 5 f . . . . . . . . . 
-    . . . f f 5 5 f . . . . . . . . . 
-    . . . . f f 5 f . . . . . . . . . 
-    . . . . . f f f . . . . . . . . . 
-    . . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . . 
-    `, SpriteKind.Projectile)
+EarlyDown.setPosition(70, 42)
+LateDown.setPosition(70, 16)
 LeftArrow.setPosition(50, 30)
+EarlyLeft.setPosition(50, 42)
+LateLeft.setPosition(50, 16)
+Lane.setPosition(80, 0)
+game.onUpdateInterval(250, function () {
+    Lane = randint(1, 4)
+    if (Lane == 1) {
+    	
+    }
+})
+forever(function () {
+    if (false && false) {
+    	
+    } else {
+    	
+    }
+})
+forever(function () {
+    UpProjectile = sprites.createProjectileFromSide(img`
+        . . . . . . . . . . . . . . . . . 
+        . . . . . . f f f f f . . . . . . 
+        . . . . . f f 9 9 9 f f . . . . . 
+        . . . . f f 9 9 1 9 9 f f . . . . 
+        . . . f f 9 9 1 1 1 9 9 f f . . . 
+        . . f f 9 1 1 1 1 1 1 1 9 f f . . 
+        . . f 9 9 9 9 9 1 9 9 9 9 9 f . . 
+        . . f f f f f 9 1 9 f f f f f . . 
+        . . . . . . f 9 1 9 f . . . . . . 
+        . . . . . . f 9 1 9 f . . . . . . 
+        . . . . . . f 9 1 9 f . . . . . . 
+        . . . . . . f 9 1 9 f . . . . . . 
+        . . . . . . f 9 1 9 f . . . . . . 
+        . . . . . . f 9 1 9 f . . . . . . 
+        . . . . . . f 9 9 9 f . . . . . . 
+        . . . . . . f f f f f . . . . . . 
+        . . . . . . . . . . . . . . . . . 
+        `, 0, -30)
+    UpProjectile.setPosition(90, 120)
+    pause(2000)
+    if (UpArrow.overlapsWith(UpProjectile) && controller.A.isPressed()) {
+        UpArrow.startEffect(effects.spray)
+    }
+})
