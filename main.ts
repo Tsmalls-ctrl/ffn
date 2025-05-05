@@ -156,12 +156,8 @@ controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
         . . . . . . . . . . . . . . . . . 
         `)
     UpArrow.setKind(SpriteKind.Perfect)
-    LateUp.setKind(SpriteKind.Late)
-    EarlyUp.setKind(SpriteKind.Early)
     pause(100)
     UpArrow.setKind(SpriteKind.Off)
-    EarlyUp.setKind(SpriteKind.Off)
-    LateUp.setKind(SpriteKind.Off)
 })
 controller.down.onEvent(ControllerButtonEvent.Released, function () {
     DownArrow.setImage(img`
@@ -335,12 +331,8 @@ controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
         . . . . . . . . . . . . . . . . . 
         `)
     LeftArrow.setKind(SpriteKind.Perfect)
-    EarlyLeft.setKind(SpriteKind.Early)
-    LateLeft.setKind(SpriteKind.Late)
     pause(100)
     LeftArrow.setKind(SpriteKind.Off)
-    EarlyLeft.setKind(SpriteKind.Off)
-    LateLeft.setKind(SpriteKind.Off)
 })
 controller.right.onEvent(ControllerButtonEvent.Released, function () {
     RightArrow.setImage(img`
@@ -535,12 +527,8 @@ controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
         . . . . . . . . . . . . . . . . . 
         `)
     RightArrow.setKind(SpriteKind.Perfect)
-    EarlyRight.setKind(SpriteKind.Early)
-    LateRight.setKind(SpriteKind.Late)
     pause(100)
     RightArrow.setKind(SpriteKind.Off)
-    EarlyRight.setKind(SpriteKind.Off)
-    LateRight.setKind(SpriteKind.Off)
 })
 controller.up.onEvent(ControllerButtonEvent.Released, function () {
     UpArrow.setImage(img`
@@ -714,26 +702,14 @@ controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
         . . . . . . . . . . . . . . . . . 
         `)
     DownArrow.setKind(SpriteKind.Perfect)
-    LateDown.setKind(SpriteKind.Late)
-    EarlyDown.setKind(SpriteKind.Early)
     pause(100)
     DownArrow.setKind(SpriteKind.Off)
-    LateDown.setKind(SpriteKind.Off)
-    EarlyDown.setKind(SpriteKind.Off)
 })
 let UpProjectile: Sprite = null
 let BetaChar: Sprite = null
-let LateDown: Sprite = null
-let EarlyDown: Sprite = null
 let DownArrow: Sprite = null
-let LateRight: Sprite = null
-let EarlyRight: Sprite = null
 let RightArrow: Sprite = null
-let LateUp: Sprite = null
-let EarlyUp: Sprite = null
 let UpArrow: Sprite = null
-let LateLeft: Sprite = null
-let EarlyLeft: Sprite = null
 let LeftArrow: Sprite = null
 scene.setBackgroundImage(img`
     eeeee2222222222222222222222222222222222ee2222ee2222ee2222222eeeee2222222222222222222222222222222222ee22222eeee222ee2eeeee2222222222222222222222222222222222ee222
@@ -876,44 +852,6 @@ LeftArrow = sprites.create(img`
     . . . . . . . . . . . . . . . . . 
     . . . . . . . . . . . . . . . . . 
     `, SpriteKind.Off)
-EarlyLeft = sprites.create(img`
-    . . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . . 
-    f f f f f f f f f f f f f f f f f 
-    f f f f f f f f f f f f f f f f f 
-    f f f f f f f f f f f f f f f f f 
-    f f f f f f f f f f f f f f f f f 
-    f f f f f f f f f f f f f f f f f 
-    f f f f f f f f f f f f f f f f f 
-    f f f f f f f f f f f f f f f f f 
-    f f f f f f f f f f f f f f f f f 
-    f f f f f f f f f f f f f f f f f 
-    . . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . . 
-    `, SpriteKind.Off)
-LateLeft = sprites.create(img`
-    . . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . . 
-    f f f f f f f f f f f f f f f f f 
-    f f f f f f f f f f f f f f f f f 
-    f f f f f f f f f f f f f f f f f 
-    f f f f f f f f f f f f f f f f f 
-    f f f f f f f f f f f f f f f f f 
-    f f f f f f f f f f f f f f f f f 
-    f f f f f f f f f f f f f f f f f 
-    f f f f f f f f f f f f f f f f f 
-    f f f f f f f f f f f f f f f f f 
-    . . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . . 
-    `, SpriteKind.Off)
 UpArrow = sprites.create(img`
     . . . . . . . . . . . . . . . . . 
     . . . . . . 1 1 1 1 1 . . . . . . 
@@ -931,44 +869,6 @@ UpArrow = sprites.create(img`
     . . . . . . 1 . . . 1 . . . . . . 
     . . . . . . 1 . . . 1 . . . . . . 
     . . . . . . 1 1 1 1 1 . . . . . . 
-    . . . . . . . . . . . . . . . . . 
-    `, SpriteKind.Off)
-EarlyUp = sprites.create(img`
-    . . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . . 
-    f f f f f f f f f f f f f f f f f 
-    f f f f f f f f f f f f f f f f f 
-    f f f f f f f f f f f f f f f f f 
-    f f f f f f f f f f f f f f f f f 
-    f f f f f f f f f f f f f f f f f 
-    f f f f f f f f f f f f f f f f f 
-    f f f f f f f f f f f f f f f f f 
-    f f f f f f f f f f f f f f f f f 
-    f f f f f f f f f f f f f f f f f 
-    . . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . . 
-    `, SpriteKind.Off)
-LateUp = sprites.create(img`
-    . . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . . 
-    f f f f f f f f f f f f f f f f f 
-    f f f f f f f f f f f f f f f f f 
-    f f f f f f f f f f f f f f f f f 
-    f f f f f f f f f f f f f f f f f 
-    f f f f f f f f f f f f f f f f f 
-    f f f f f f f f f f f f f f f f f 
-    f f f f f f f f f f f f f f f f f 
-    f f f f f f f f f f f f f f f f f 
-    f f f f f f f f f f f f f f f f f 
-    . . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . . 
     . . . . . . . . . . . . . . . . . 
     `, SpriteKind.Off)
 RightArrow = sprites.create(img`
@@ -990,44 +890,6 @@ RightArrow = sprites.create(img`
     . . . . . . . . . . . . . . . . . 
     . . . . . . . . . . . . . . . . . 
     `, SpriteKind.Off)
-EarlyRight = sprites.create(img`
-    . . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . . 
-    f f f f f f f f f f f f f f f f f 
-    f f f f f f f f f f f f f f f f f 
-    f f f f f f f f f f f f f f f f f 
-    f f f f f f f f f f f f f f f f f 
-    f f f f f f f f f f f f f f f f f 
-    f f f f f f f f f f f f f f f f f 
-    f f f f f f f f f f f f f f f f f 
-    f f f f f f f f f f f f f f f f f 
-    f f f f f f f f f f f f f f f f f 
-    . . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . . 
-    `, SpriteKind.Off)
-LateRight = sprites.create(img`
-    . . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . . 
-    f f f f f f f f f f f f f f f f f 
-    f f f f f f f f f f f f f f f f f 
-    f f f f f f f f f f f f f f f f f 
-    f f f f f f f f f f f f f f f f f 
-    f f f f f f f f f f f f f f f f f 
-    f f f f f f f f f f f f f f f f f 
-    f f f f f f f f f f f f f f f f f 
-    f f f f f f f f f f f f f f f f f 
-    f f f f f f f f f f f f f f f f f 
-    . . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . . 
-    `, SpriteKind.Off)
 DownArrow = sprites.create(img`
     . . . . . . . . . . . . . . . . . 
     . . . . . . 1 1 1 1 1 . . . . . . 
@@ -1045,44 +907,6 @@ DownArrow = sprites.create(img`
     . . . . 1 1 . . . . . 1 1 . . . . 
     . . . . . 1 1 . . . 1 1 . . . . . 
     . . . . . . 1 1 1 1 1 . . . . . . 
-    . . . . . . . . . . . . . . . . . 
-    `, SpriteKind.Off)
-EarlyDown = sprites.create(img`
-    . . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . . 
-    f f f f f f f f f f f f f f f f f 
-    f f f f f f f f f f f f f f f f f 
-    f f f f f f f f f f f f f f f f f 
-    f f f f f f f f f f f f f f f f f 
-    f f f f f f f f f f f f f f f f f 
-    f f f f f f f f f f f f f f f f f 
-    f f f f f f f f f f f f f f f f f 
-    f f f f f f f f f f f f f f f f f 
-    f f f f f f f f f f f f f f f f f 
-    . . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . . 
-    `, SpriteKind.Off)
-LateDown = sprites.create(img`
-    . . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . . 
-    f f f f f f f f f f f f f f f f f 
-    f f f f f f f f f f f f f f f f f 
-    f f f f f f f f f f f f f f f f f 
-    f f f f f f f f f f f f f f f f f 
-    f f f f f f f f f f f f f f f f f 
-    f f f f f f f f f f f f f f f f f 
-    f f f f f f f f f f f f f f f f f 
-    f f f f f f f f f f f f f f f f f 
-    f f f f f f f f f f f f f f f f f 
-    . . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . . 
     . . . . . . . . . . . . . . . . . 
     `, SpriteKind.Off)
 BetaChar = sprites.create(img`
@@ -1117,44 +941,12 @@ BetaChar = sprites.create(img`
     .......bbbbcccccccccccccc.....
     .......bbbbcccccccccccccc.....
     `, SpriteKind.Off)
-let Lane: number = sprites.create(img`
-    22222222222222222222222222222222222222222222222222222222222222222222222222222222
-    22222222222222222222222222222222222222222222222222222222222222222222222222222222
-    22222222222222222222222222222222222222222222222222222222222222222222222222222222
-    22222222222222222222222222222222222222222222222222222222222222222222222222222222
-    22222222222222222222222222222222222222222222222222222222222222222222222222222222
-    22222222222222222222222222222222222222222222222222222222222222222222222222222222
-    22222222222222222222222222222222222222222222222222222222222222222222222222222222
-    22222222222222222222222222222222222222222222222222222222222222222222222222222222
-    22222222222222222222222222222222222222222222222222222222222222222222222222222222
-    `, SpriteKind.Miss)
 BetaChar.setPosition(124, 91)
 UpArrow.setPosition(90, 30)
-EarlyUp.setPosition(90, 42)
-LateUp.setPosition(90, 16)
-RightArrow.setPosition(110, 30)
-EarlyRight.setPosition(110, 42)
-LateRight.setPosition(110, 16)
 DownArrow.setPosition(70, 30)
-EarlyDown.setPosition(70, 42)
-LateDown.setPosition(70, 16)
+RightArrow.setPosition(110, 30)
 LeftArrow.setPosition(50, 30)
-EarlyLeft.setPosition(50, 42)
-LateLeft.setPosition(50, 16)
-Lane.setPosition(80, 0)
-game.onUpdateInterval(250, function () {
-    Lane = randint(1, 4)
-    if (Lane == 1) {
-    	
-    }
-})
-forever(function () {
-    if (false && false) {
-    	
-    } else {
-    	
-    }
-})
+info.setScore(0)
 forever(function () {
     UpProjectile = sprites.createProjectileFromSide(img`
         . . . . . . . . . . . . . . . . . 
@@ -1177,7 +969,8 @@ forever(function () {
         `, 0, -30)
     UpProjectile.setPosition(90, 120)
     pause(2000)
-    if (UpArrow.overlapsWith(UpProjectile) && controller.A.isPressed()) {
+    if (UpProjectile.overlapsWith(UpArrow) && controller.A.isPressed()) {
         UpArrow.startEffect(effects.spray)
+        info.changeScoreBy(1)
     }
 })
